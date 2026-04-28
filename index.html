@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>おれやでのゲーム部屋｜公式サイト</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #0f0f0f;
+  color: #fff;
+}
+
+header {
+  min-height: 420px;
+  background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.85)),
+    linear-gradient(135deg, #ff0000, #320000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.hero {
+  max-width: 850px;
+}
+
+.logo {
+  display: inline-block;
+  background: #ff0000;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+
+h1 {
+  font-size: 46px;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #ddd;
+  margin: 18px 0 28px;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  padding: 13px 22px;
+  border-radius: 999px;
+  font-weight: bold;
+  background: #ff0000;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.btn.sub {
+  background: #2b2b2b;
+  border: 1px solid #555;
+}
+
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 36px 20px;
+}
+
+section {
+  margin-bottom: 54px;
+}
+
+section h2 {
+  font-size: 28px;
+  border-left: 6px solid #ff0000;
+  padding-left: 12px;
+  margin-bottom: 20px;
+}
+
+.card {
+  background: #1b1b1b;
+  border: 1px solid #333;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+.about {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #ddd;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.video-card {
+  background: #1b1b1b;
+  border: 1px solid #333;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+iframe {
+  width: 100%;
+  height: 260px;
+  border: none;
+}
+
+.video-info {
+  padding: 18px;
+}
+
+.video-info h3 {
+  margin: 0 0 8px;
+}
+
+.video-info p {
+  margin: 0;
+  color: #bbb;
+  font-size: 14px;
+}
+
+.genre-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.genre {
+  background: #1b1b1b;
+  border: 1px solid #333;
+  border-radius: 18px;
+  padding: 22px;
+}
+
+.genre h3 {
+  margin-top: 0;
+  color: #fff;
+}
+
+.genre p {
+  color: #bbb;
+  line-height: 1.7;
+}
+
+.contact {
+  text-align: center;
+}
+
+footer {
+  background: #080808;
+  color: #888;
+  text-align: center;
+  padding: 24px;
+  font-size: 14px;
+}
+
+@media (max-width: 800px) {
+  h1 {
+    font-size: 34px;
+  }
+
+  .video-grid,
+  .genre-grid {
+    grid-template-columns: 1fr;
+  }
+
+  iframe {
+    height: 220px;
+  }
+}
+.video-card {
+  transition: 0.3s;
+}
+
+.video-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+
+.video-card img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.video-card:hover img {
+  opacity: 0.9;
+}
+.thumbnail {
+  position: relative;
+}
+
+.thumbnail img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  background: rgba(255,0,0,0.9);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: 0.3s;
+}
+
+.video-card:hover .play-button {
+  transform: translate(-50%, -50%) scale(1.2);
+  background: rgba(255,0,0,1);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="hero">
+    <div class="logo">🎮 GAME CHANNEL</div>
+    <h1>おれやでのゲーム部屋</h1>
+    <p>ゲーム実況・縛りプレイ・検証企画を、ゆるく本気で楽しむチャンネル。</p>
+
+    <div class="buttons">
+      <a class="btn" href="https://www.youtube.com/" target="_blank">YouTubeを見る</a>
+      <a class="btn sub" href="#videos">最新動画へ</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <h2>👤 チャンネル紹介</h2>
+  <div class="card about">
+    <p>
+      「おれやでのゲーム部屋」は、ゲーム実況を中心に、
+      縛りプレイ・検証・攻略・ネタ企画などを投稿していくチャンネルです。
+    </p>
+    <p>
+      ただプレイするだけじゃなく、「それ試すんや！」「その発想おもろいな」と
+      思ってもらえるような動画づくりを目指しています。
+    </p>
+  </div>
+</section>
+
+<section id="videos">
+  <h2>🔥 最新・おすすめ動画</h2>
+
+  <div class="video-card">
+
+ <div class="thumbnail">
+  <img src="https://img.youtube.com/vi/9F11RcHL_vA/maxresdefault.jpg" alt="動画サムネ">
+  <div class="play-button">▶</div>
+</div>
+
+  <a class="btn" href="https://youtu.be/9F11RcHL_vA" target="_blank">
+    ▶ YouTubeで動画を見る
+  </a>
+
+  <div class="video-info">
+    <h3>最新動画タイトル</h3>
+    <p>ここに動画の説明を入れる</p>
+  </div>
+
+</div>
+
+   <div class="video-card">
+
+ <div class="thumbnail">
+  <img src="https://img.youtube.com/vi/9F11RcHL_vA/maxresdefault.jpg" alt="動画サムネ">
+  <div class="play-button">▶</div>
+</div>
+
+  <a class="btn" href="https://youtu.be/9F11RcHL_vA" target="_blank">
+    ▶ YouTubeで動画を見る
+  </a>
+
+  <div class="video-info">
+    <h3>最新動画タイトル</h3>
+    <p>ここに動画の説明を入れる</p>
+  </div>
+
+</div>
+  </div>
+</section>
+
+<section>
+  <h2>🎮 コンテンツジャンル</h2>
+
+  <div class="genre-grid">
+    <div class="genre">
+      <h3>🔥 縛りプレイ</h3>
+      <p>普通に遊ぶだけでは終わらない、条件付きのチャレンジ企画。</p>
+    </div>
+
+    <div class="genre">
+      <h3>🧪 検証企画</h3>
+      <p>「これ実際どうなるん？」をゲーム内で試していく企画。</p>
+    </div>
+
+    <div class="genre">
+      <h3>😂 ネタ動画</h3>
+      <p>気軽に見られるショート系・笑える企画・小ネタ動画。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>📩 お問い合わせ</h2>
+  <div class="card contact">
+    <p>コラボ・連絡は、YouTubeコメントまたはXからお願いします。</p>
+    <div class="buttons">
+      <a class="btn" href="https://www.youtube.com/" target="_blank">YouTube</a>
+      <a class="btn sub" href="https://x.com/" target="_blank">Xを見る</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  © おれやでのゲーム部屋
+</footer>
+
+</body>
+</html>
+<!-- force rebuild -->
